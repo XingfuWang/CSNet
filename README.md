@@ -1,6 +1,6 @@
 # Cholesky-Space-for-Brain-Computer-Interfaces
 
-![overall framework](overall_framework.pdf)
+![overall framework](overall_framework.png)
 
 This repository is the official implementation for the paper submission titled:  
 > "Cholesky Space for Brain–Computer Interfaces"
