@@ -17,7 +17,6 @@ The following dependencies are required to run the code:
 - matplotlib == 3.9.0
 - scikit-learn == 1.5.0
 - moabb == 1.2.0
-- braindecode == 0.8.1
 
 
 ### 1.2 Installation Steps
