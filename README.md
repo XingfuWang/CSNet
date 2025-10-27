@@ -1,51 +1,166 @@
 # Cholesky-Space-for-Brain-Computer-Interfaces
-This package accompanies the submission titled:
 
-    "Cholesky Space for Brain–Computer Interfaces"
+![overall framework](overall_framework.pdf)
 
-========================
-1. Environment Setup
-========================
+This repository is the official implementation for the paper submission titled:  
+> "Cholesky Space for Brain–Computer Interfaces"
 
-Required environment:
 
+## 1. Environment Setup
+
+### 1.1 Requirements
+The following dependencies are required to run the code:
 - Python 3.10
 - PyTorch 2.2.2 + CUDA 12.1
-- numpy==1.24.4
-- pandas==2.2.3
-- matplotlib==3.9.0
-- scikit-learn==1.5.0
-- moabb==1.2.0
-- braindecode==0.8.1
+- numpy == 1.24.4
+- pandas == 2.2.3
+- matplotlib == 3.9.0
+- scikit-learn == 1.5.0
+- moabb == 1.2.0
+- braindecode == 0.8.1
 
-We recommend installing PyTorch manually before the other dependencies:
 
-    pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu121
+### 1.2 Installation Steps
+We recommend installing **PyTorch first manually** (to ensure CUDA compatibility) before other dependencies:
 
-Then install all other packages via:
+```bash
+# Install PyTorch with CUDA 12.1 support
+pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu121
+```
 
-    pip install -r requirements.txt
+Then install the remaining dependencies via `requirements.txt`:
+```bash
+pip install -r requirements.txt
+```
 
-========================
-2. Datasets
-========================
-- BCIC IV 2a (BNCI 2014-001, ~743MB)
 
-Important:  
-You do NOT need to download any dataset manually.  
-On the first run, the script will automatically download the raw data from the internet.
+## 2. Datasets
 
-========================
-3. How to Run
-========================
+Currently, the code supports the following dataset:
+- **BCIC IV 2a (BNCI 2014-001)** (~743MB)
 
-To train models on all supported datasets using default settings, simply run:
 
-    python main.py
+### Important Note
+✅ **No manual download required!**  
+The raw dataset will be **automatically downloaded from the official source** during the first run of the script.
 
-This will:
-- Automatically download and preprocess the data
-- Train all models and save results.
 
-Customizing dataset or model 
-To run specific datasets or models, open `main.py` and edit the following two lists by simply uncommenting the corresponding lines. 😄
+## 3. How to Run
+
+### 3.1 Default Run
+To train all models on all supported datasets with default hyperparameters, simply execute:
+```bash
+python main.py
+```
+
+This command will:
+1. Automatically download and preprocess the dataset.
+2. Train all baseline/models in the pipeline.
+3. Save training logs and results to the specified directory (see `main.py` for details).
+
+
+### 3.2 Custom Run (Specific Datasets/Models)
+To train on **specific datasets** or use **specific models**, modify `main.py` as follows:
+1. Open `main.py` and locate the two key lists (e.g., `DATASETS` and `MODELS`).
+2. Uncomment the lines corresponding to your target dataset/model.
+3. Re-run the script:
+   ```bash
+   python main.py
+   ```
+
+
+## 4. Citation
+
+If you find this code or our work helpful for your research, please consider giving this repository a ⭐ **Star** and citing our paper:
+
+```bibtex
+我已将引用格式和Star请求自然融入文档末尾，新增「Citation」章节，保持整体结构清晰、风格统一，同时突出学术引用的规范性和GitHub社区互动性：
+
+
+# Cholesky-Space-for-Brain-Computer-Interfaces
+
+This repository is the official implementation for the paper submission titled:  
+> "Cholesky Space for Brain–Computer Interfaces"
+
+
+## 1. Environment Setup
+
+### 1.1 Requirements
+The following dependencies are required to run the code:
+- Python 3.10
+- PyTorch 2.2.2 + CUDA 12.1
+- numpy == 1.24.4
+- pandas == 2.2.3
+- matplotlib == 3.9.0
+- scikit-learn == 1.5.0
+- moabb == 1.2.0
+- braindecode == 0.8.1
+
+
+### 1.2 Installation Steps
+We recommend installing **PyTorch first manually** (to ensure CUDA compatibility) before other dependencies:
+
+```bash
+# Install PyTorch with CUDA 12.1 support
+pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu121
+```
+
+Then install the remaining dependencies via `requirements.txt`:
+```bash
+pip install -r requirements.txt
+```
+
+
+## 2. Datasets
+
+Currently, the code supports the following dataset:
+- **BCIC IV 2a (BNCI 2014-001)** (~743MB)
+
+
+### Important Note
+✅ **No manual download required!**  
+The raw dataset will be **automatically downloaded from the official source** during the first run of the script.
+
+
+## 3. How to Run
+
+### 3.1 Default Run
+To train all models on all supported datasets with default hyperparameters, simply execute:
+```bash
+python main.py
+```
+
+This command will:
+1. Automatically download and preprocess the dataset.
+2. Train all baseline/models in the pipeline.
+3. Save training logs and results to the specified directory (see `main.py` for details).
+
+
+### 3.2 Custom Run (Specific Datasets/Models)
+To train on **specific datasets** or use **specific models**, modify `main.py` as follows:
+1. Open `main.py` and locate the two key lists (e.g., `DATASETS` and `MODELS`).
+2. Uncomment the lines corresponding to your target dataset/model.
+3. Re-run the script:
+   ```bash
+   python main.py
+   ```
+
+
+## 4. Citation
+
+If you find this code or our work helpful for your research, please consider giving this repository a ⭐ **Star** and citing our paper:
+
+```bibtex
+
+@ARTICLE{10922209,
+  author={Wang, Xingfu and Qi, Wenxia and Yang, Wenjie and Wang, Wei},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={Cholesky Space for Brain–Computer Interfaces}, 
+  year={2025},
+  volume={36},
+  number={8},
+  pages={15424-15435},
+  keywords={Electroencephalography;Manifolds;Brain modeling;Decoding;Feature extraction;Motors;Emotion recognition;Covariance matrices;Computational efficiency;Vectors;Brain–computer interface (BCI);Cholesky space;electroencephalogram (EEG);Riemannian manifold},
+  doi={10.1109/TNNLS.2025.3542801}}
+
+```
